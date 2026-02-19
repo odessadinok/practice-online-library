@@ -1,5 +1,5 @@
 # UML (PlantUML)
 
 Диаграммы вынесены в отдельные файлы:
-- [uml_erd.puml](uml_erd.puml) — ERD
-- [uml_class.puml](uml_class.puml) — Class diagram
+- [uml_erd.png](uml_erd.png) — ERD
+- [uml_class.png](uml_class.png) — Class diagram
