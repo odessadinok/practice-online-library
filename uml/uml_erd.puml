@@ -1,0 +1,54 @@
+@startuml
+hide circle
+skinparam linetype ortho
+
+entity "users" as users {
+  * id : int
+  --
+  email : varchar
+  hashed_password : varchar
+  role : varchar
+}
+
+entity "books" as books {
+  * id : int
+  --
+  title : varchar
+}
+
+entity "authors" as authors {
+  * id : int
+  --
+  name : varchar
+}
+
+entity "genres" as genres {
+  * id : int
+  --
+  name : varchar
+}
+
+entity "book_authors" as book_authors {
+  * book_id : int
+  * author_id : int
+}
+
+entity "book_genres" as book_genres {
+  * book_id : int
+  * genre_id : int
+}
+
+entity "user_favorites" as user_favorites {
+  * user_id : int
+  * book_id : int
+}
+
+books ||--o{ book_authors
+authors ||--o{ book_authors
+
+books ||--o{ book_genres
+genres ||--o{ book_genres
+
+users ||--o{ user_favorites
+books ||--o{ user_favorites
+@enduml

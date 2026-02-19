@@ -1,0 +1,30 @@
+@startuml
+hide circle
+skinparam linetype ortho
+
+class User {
+  +id: int
+  +email: str
+  +hashed_password: str
+  +role: str
+}
+
+class Book {
+  +id: int
+  +title: str
+}
+
+class Author {
+  +id: int
+  +name: str
+}
+
+class Genre {
+  +id: int
+  +name: str
+}
+
+User "1" -- "0..*" Book : favorites
+Book "1" -- "1..*" Author : authors
+Book "1" -- "1..*" Genre : genres
+@enduml
